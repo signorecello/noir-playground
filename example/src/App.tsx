@@ -1,4 +1,4 @@
-import NoirEditor from './components/editor/NoirEditor';
+import NoirEditor from '../../src/components/NoirEditor';
 
 import styled from "styled-components"
 

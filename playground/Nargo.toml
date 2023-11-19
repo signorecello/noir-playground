@@ -1,7 +1,0 @@
-[package]
-name = "playground"
-type = "bin"
-authors = [""]
-compiler_version = ">=0.19.2"
-
-[dependencies]

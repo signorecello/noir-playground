@@ -1,16 +1,16 @@
 import Editor from "@monaco-editor/react";
-import noirDefault from '../../../playground/src/main.nr?raw'
+import noirDefault from '../syntax/main.nr?raw'
 
-import { ButtonContainer, EditorContainer, InnerButtonContainer, InputsContainer, StyledButton } from "./NoirEditor.styles.tsx";
-import { generateProof } from "../../utils/useGetProof.tsx"
+import { ButtonContainer, EditorContainer, InnerButtonContainer, InputsContainer, StyledButton } from "./NoirEditor.styles";
+import { generateProof } from "../utils/useGetProof"
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { compileCode } from "../../utils/useGetProof.tsx";
+import { compileCode } from "../utils/useGetProof";
 import { CompiledCircuit, ProofData } from "@noir-lang/types";
 import { InputMap } from "@noir-lang/noirc_abi";
-import { RenderInputs } from "./inputsBox.tsx";
-import { prepareProveInputs, useProofParamBox } from "../../utils/serializeParams.tsx";
+import { RenderInputs } from "./InputsBox";
+import { prepareProveInputs, useProofParamBox } from "../utils/serializeParams";
 
 function NoirEditor() {
     const [code, setCode] = useState<string | undefined>(noirDefault)

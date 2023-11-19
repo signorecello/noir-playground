@@ -1,4 +1,4 @@
-import { ParamType } from "../components/editor/inputsBox";
+import { ParamType } from "../components/InputsBox";
 import { compileCode } from "./useGetProof";
 import { useEffect, useState } from "react";
 import { InputMap } from "@noir-lang/noirc_abi";

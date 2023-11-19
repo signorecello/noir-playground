@@ -28,7 +28,7 @@ export default defineConfig(({ command }) => {
       plugins: [
         react(),
         copy({
-          targets: [{ src: 'node_modules/**/*.wasm', dest: 'node_modules/.vite/dist' }],
+          targets: [{ src: 'node_modules/@noir-lang/**/*.wasm', dest: 'node_modules/.vite/dist' }],
           copySync: true,
           hook: 'buildStart',
         }),
