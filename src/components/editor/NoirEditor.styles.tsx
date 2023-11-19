@@ -20,3 +20,37 @@ export const StyledButton = styled.button<{ disabled?: boolean }>`
     gap: 8px;
     opacity: ${props => props.disabled ? 0.5 : 1};
 `
+
+
+export const EditorContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+`
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+`
+
+export const InnerButtonContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`
+
+export const InputsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    margin: 10px;
+    padding: 0 2%;
+`

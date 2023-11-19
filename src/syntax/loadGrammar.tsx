@@ -1,4 +1,4 @@
-import tmLanguage from "../../syntax/noir.tmLanguage.json";
+import tmLanguage from "./noir.tmLanguage.json";
 // import configLanguage from "../syntax/noirConfigurations.json";
 import { Registry } from 'monaco-textmate'
 import { wireTmGrammars } from 'monaco-editor-textmate'
