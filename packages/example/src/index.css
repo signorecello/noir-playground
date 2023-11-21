@@ -1,0 +1,34 @@
+body {
+  font-family: 'Inter Variable', sans-serif;
+}
+
+body {
+    background-color: #32204F;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+  color: #FFF;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 116%; /* 17.4px */
+  display: flex;
+  align-self: center;
+}

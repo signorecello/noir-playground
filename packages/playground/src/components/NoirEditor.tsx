@@ -1,5 +1,6 @@
 import Editor from "@monaco-editor/react";
-import noirDefault from '../syntax/main.nr?raw'
+import noirDefault from '../syntax/main.nr'
+import React from "react"
 
 import { ButtonContainer, EditorContainer, InnerButtonContainer, InputsContainer, StyledButton } from "./NoirEditor.styles";
 import { generateProof } from "../utils/useGetProof"
@@ -12,7 +13,7 @@ import { InputMap } from "@noir-lang/noirc_abi";
 import { RenderInputs } from "./InputsBox";
 import { prepareProveInputs, useProofParamBox } from "../utils/serializeParams";
 
-function NoirEditor() {
+function NoirEditor( { height } : { height : string }) {
     const [code, setCode] = useState<string | undefined>(noirDefault)
     const [proof, setProof] = useState<ProofData | null>(null)
     const [pending, setPending ] = useState<boolean>(false)
@@ -70,7 +71,7 @@ function NoirEditor() {
     return (
         <EditorContainer>
             <Editor
-                height="300px"
+                height={height ? height : "300px"}
                 defaultLanguage="noir"
                 defaultValue={noirDefault}
                 onChange={(value) => setCode(value)}

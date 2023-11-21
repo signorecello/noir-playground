@@ -11,8 +11,9 @@ const wasmContentTypePlugin = {
     server.middlewares.use(async (req, res, next) => {
       if (req.url.endsWith('.wasm')) {
         res.setHeader('Content-Type', 'application/wasm');
-        const newPath = req.url.replace('deps', 'dist');
-        const targetPath = path.join(__dirname, newPath);
+        const fileName = req.url.split('/')[req.url.split('/').length - 1];
+        const targetPath = path.join("./node_modules/.vite/dist", fileName);
+        console.log(targetPath)
         const wasmContent = fs.readFileSync(targetPath);
         return res.end(wasmContent);
       }
@@ -28,7 +29,7 @@ export default defineConfig(({ command }) => {
       plugins: [
         react(),
         copy({
-          targets: [{ src: 'node_modules/@noir-lang/**/*.wasm', dest: 'node_modules/.vite/dist' }],
+          targets: [{ src: '**/*.wasm', dest: 'node_modules/.vite/dist' }],
           copySync: true,
           hook: 'buildStart',
         }),

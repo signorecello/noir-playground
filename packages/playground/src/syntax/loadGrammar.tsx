@@ -1,15 +1,17 @@
 import tmLanguage from "./noir.tmLanguage.json";
 // import configLanguage from "../syntax/noirConfigurations.json";
+import React from "react";
 import { Registry } from 'monaco-textmate'
 import { wireTmGrammars } from 'monaco-editor-textmate'
 
 import initNoirWasm from "@noir-lang/noir_wasm";
+// import noir_wasm_bg from "@noir-lang/noir_wasm/web/noir_wasm_bg.wasm";
 
 import { loadWASM } from 'onigasm'
 import * as monaco from "monaco-editor"
 import { loader } from '@monaco-editor/react';
 import { useEffect, useState } from "react";
-import onigasmUrl from "./onigasm.wasm?url"
+import onigasmUrl from "./onigasm.wasm";
 
 
 export const LoadGrammar = ({ children }: { children: React.ReactNode }) => {
@@ -20,7 +22,6 @@ export const LoadGrammar = ({ children }: { children: React.ReactNode }) => {
     }, []);
     if (loaded) return <>{children}</>;
 };
-
 
 async function loadGrammar() {
 
