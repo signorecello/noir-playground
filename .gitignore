@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 node_modules
+.rollup.cache
+.yarn
+.vscode

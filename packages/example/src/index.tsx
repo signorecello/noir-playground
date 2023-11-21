@@ -4,7 +4,7 @@ import '@fontsource-variable/inter';
 import "./index.css"
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import { LoadGrammar, NoirEditor } from '@signorecello/noir-playground';
+import { LoadGrammar, NoirEditor } from '@signorecello/noir_playground';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

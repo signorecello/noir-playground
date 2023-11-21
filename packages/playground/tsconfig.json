@@ -6,19 +6,16 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "composite": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "dist"
+    "declaration": true,
   },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/*.nr", "**/*.wasm"]
+  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.json"],
+  "exclude": ["dist", "node_modules", "**/*.nr", "**/*.wasm"]
 }
