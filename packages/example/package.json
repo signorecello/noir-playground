@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.15",
-    "@signorecello/noir_playground": "0.1.0",
+    "@signorecello/noir_playground": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
@@ -23,7 +23,7 @@
     "vite": "^5.0.0",
     "workspace": "0.1.0"
   },
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.0.2",
   "devDependencies": {
     "@rollup/plugin-wasm": "^6.2.2",
     "@types/react-dom": "^18.2.16",

@@ -25,5 +25,4 @@ dist-ssr
 
 node_modules
 .rollup.cache
-.yarn
 .vscode
