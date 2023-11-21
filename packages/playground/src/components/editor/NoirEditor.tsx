@@ -1,4 +1,4 @@
-import Editor from "@monaco-editor/react";
+import Editor, { EditorProps } from "@monaco-editor/react";
 import {
   ButtonContainer,
   EditorContainer,
@@ -6,19 +6,23 @@ import {
   InputsContainer,
   StyledButton,
 } from "./NoirEditor.styles";
-import { generateProof } from "../utils/useGetProof";
+import { generateProof } from "../../utils/generateProof";
 
 import { ChangeEvent, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { compileCode } from "../utils/useGetProof";
+import { compileCode } from "../../utils/generateProof";
 import { CompiledCircuit, ProofData } from "@noir-lang/types";
 import { InputMap } from "@noir-lang/noirc_abi";
-import { RenderInputs } from "./InputsBox";
-import { prepareProveInputs, useProofParamBox } from "../utils/serializeParams";
-import { LoadGrammar } from "../syntax/loadGrammar";
+import { RenderInputs } from "../inputs/inputs";
+import { prepareInputs } from "../../utils/serializeParams";
+import { LoadGrammar } from "../../hooks/loadGrammar";
+import { useParams } from "../../hooks/useParams";
 
+export interface NoirEditorProps extends EditorProps {
+  threads?: number
+}
 
-function NoirEditor({ height }: { height: string }) {
+function NoirEditor(props: NoirEditorProps) {
   const [defaultCode, setDefaultCode] = useState<string | undefined>(undefined)
   const [code, setCode] = useState<string | undefined>();
   const [proof, setProof] = useState<ProofData | null>(null);
@@ -29,7 +33,7 @@ function NoirEditor({ height }: { height: string }) {
   );
   const [inputs, setInputs] = useState<{ [key: string]: string }>({});
 
-  const params = useProofParamBox({ compiledCode });
+  const params = useParams({ compiledCode });
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -64,9 +68,9 @@ function NoirEditor({ height }: { height: string }) {
   };
 
   const prove = async () => {
-    const inputMap = prepareProveInputs(params!, inputs);
+    const inputMap = prepareInputs(params!, inputs);
     const proofData = await toast.promise(
-      generateProof({ circuit: compiledCode!, input: inputMap as InputMap }),
+      generateProof({ circuit: compiledCode!, input: inputMap as InputMap, threads: props.threads ?? navigator.hardwareConcurrency }),
       {
         pending: "Calculating proof...",
         success: "Proof calculated!",
@@ -96,12 +100,12 @@ function NoirEditor({ height }: { height: string }) {
       <LoadGrammar>
         <ToastContainer />
         <Editor
-          height={height ? height : "300px"}
+          {...props}
           defaultLanguage="noir"
           defaultValue={defaultCode}
           onChange={(value) => setCode(value)}
         />
-        <ButtonContainer>
+        <ButtonContainer {...props}>
           <InnerButtonContainer>
             <StyledButton onClick={() => submit()} disabled={pending}>
               Compile

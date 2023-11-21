@@ -1,30 +1,6 @@
-import { InputMap } from "@noir-lang/noirc_abi";
 import { ReactNode } from "react";
-import styled from "styled-components";
-
-type InputsBoxTypes = {
-  params: InputMap[] & { name: string }[];
-  inputs: { [key: string]: string };
-  handleInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
-
-const InputSection = styled.div<{ $indent: boolean }>`
-  display: flex;
-  flex-direction: column;
-  align-self: flex-start;
-  padding-left: ${(props) => props.$indent && "2%"};
-`;
-
-const Label = styled.label<{ $isParent?: boolean }>`
-  align-self: flex-start;
-  font-size: ${(props) => (props.$isParent ? "2em" : "1em")};
-`;
-
-export type ParamType = {
-  name: string;
-  parent?: string;
-  children?: ParamType[];
-};
+import { InputsBoxTypes, ParamType } from "../../types";
+import { Label, InputSection } from "./inputs.styles";
 
 export function RenderInputs({ params, inputs, handleInput }: InputsBoxTypes) {
   if (!params) return <></>;
@@ -34,7 +10,6 @@ export function RenderInputs({ params, inputs, handleInput }: InputsBoxTypes) {
       if (param.children) {
         return (
           <>
-            <br />
             <Label $isParent={true}>{param.parent}</Label>
             {param.children.map((p: ParamType) => unroll(p))}
           </>

@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach --all --parallel --topological-dev --verbose run build",
-    "dev": "yarn workspace example dev"
+    "dev": "yarn workspaces foreach --all --parallel run dev"
   },
   "dependencies": {
     "react": "^18.2.0"

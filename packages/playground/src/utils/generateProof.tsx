@@ -1,5 +1,4 @@
 import { CompiledCircuit } from "@noir-lang/types";
-
 import { BarretenbergBackend } from "@noir-lang/backend_barretenberg";
 import { Noir } from "@noir-lang/noir_js";
 import { InputMap } from "@noir-lang/noirc_abi";
@@ -23,13 +22,16 @@ export const compileCode = (code: string | undefined) => {
 export async function generateProof({
   circuit,
   input,
+  threads,
 }: {
   circuit: CompiledCircuit;
   input: InputMap;
+  threads: number;
 }) {
+  console.log(threads)
   const backend = new BarretenbergBackend(
     circuit as unknown as CompiledCircuit,
-    { threads: 8 },
+    { threads },
   );
   const noir = new Noir(circuit as unknown as CompiledCircuit, backend);
   const proof = noir!.generateFinalProof(input);

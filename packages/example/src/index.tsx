@@ -8,7 +8,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 <React.StrictMode>
     <div className="container">
       <h1>Noir Playground</h1>
-      <NoirEditor height="300px" />
+      <p>This playground works entirely client-side. Enjoy!</p>
+      <p>Visit the&nbsp;<a href="https://github.com/signorecello/noir-playground">Github Repo</a>&nbsp;to know more</p>
+      <NoirEditor height="300px"/>
     </div>
   </React.StrictMode>,
 )

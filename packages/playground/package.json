@@ -17,6 +17,7 @@
         "build": "yarn build:cjs && yarn build:esm",
         "build:cjs": "rollup -c rollup.config.cjs.js",
         "build:esm": "rollup -c rollup.config.esm.js",
+        "dev": "rollup -c rollup.config.esm.js -w",
         "lint": "eslint --ext .ts,.tsx src",
         "format": "prettier --write \"src/**/*.{ts,tsx}\"",
         "test": "echo \"Error: no test specified\" && exit 1"

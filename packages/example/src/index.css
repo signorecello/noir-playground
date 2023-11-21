@@ -14,21 +14,36 @@ body {
     flex-direction: column;
 }
 
-
-
 .container {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 10%;
+    max-width: 60%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+p, 
+h1 {
+  color: #FFF;
+  align-self: center;
+  display: flex;
+  line-height: 116%; /* 17.4px */
 }
 
 h1 {
-  color: #FFF;
-  font-size: 15px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 116%; /* 17.4px */
-  display: flex;
-  align-self: center;
+
+}
+
+a {
+  color: #AFAFAF;
 }

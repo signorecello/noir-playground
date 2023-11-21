@@ -31,7 +31,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 ### Options
 
-Not much to choose from, for now. The only option `NoirEditor` accepts is `height` (ex `<NoirEditor height="300px" />`), which will be passed down to the Monaco text editor.
+You can pass all the options in [Monaco editor](https://github.com/suren-atoyan/monaco-react#props).
+
+There are some additional options related with Noir:
+
+| Name | Type  | Default | Description |
+| :--- | :---- | :------ | :---------- |
+| threads | number | `navigator.hardwareConcurrency` | the number of threads to use in NoirJS. Defaults to the maximum available in your machine |
 
 ## How to build
 

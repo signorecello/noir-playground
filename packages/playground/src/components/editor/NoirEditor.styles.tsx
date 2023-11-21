@@ -1,3 +1,4 @@
+import { EditorProps } from "@monaco-editor/react";
 import styled from "styled-components";
 
 export const StyledButton = styled.button<{ disabled?: boolean }>`
@@ -29,11 +30,12 @@ export const EditorContainer = styled.div`
   flex-direction: column;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.div<EditorProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: ${(props) => props.width || "100%"};
+  height: ${(props) => props.height || "100%"};
 `;
 
 export const InnerButtonContainer = styled.div`
