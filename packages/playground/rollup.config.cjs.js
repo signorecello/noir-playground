@@ -10,13 +10,13 @@ export default {
         format: "cjs"
 	},
     plugins: [
-        typescript(),
+        typescript({ compilerOptions: { outDir: 'dist/cjs' }}),
         json(),
         wasm(),
         copy({
             targets: [
                 { src: 'src/**/*.nr', dest: 'dist/cjs' },
-                { src: '../../node_modules/**/@noir-lang/**/*.wasm', dest: 'dist/cjs'}
+                { src: 'src/**/*.wasm', dest: 'dist/cjs'}
             ]
         }),
     ]

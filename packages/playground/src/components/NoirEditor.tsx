@@ -9,12 +9,13 @@ import {
 import { generateProof } from "../utils/useGetProof";
 
 import { ChangeEvent, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { compileCode } from "../utils/useGetProof";
 import { CompiledCircuit, ProofData } from "@noir-lang/types";
 import { InputMap } from "@noir-lang/noirc_abi";
 import { RenderInputs } from "./InputsBox";
 import { prepareProveInputs, useProofParamBox } from "../utils/serializeParams";
+import { LoadGrammar } from "../syntax/loadGrammar";
 
 
 function NoirEditor({ height }: { height: string }) {
@@ -92,31 +93,34 @@ function NoirEditor({ height }: { height: string }) {
   if (!defaultCode) return <div>Loading...</div>
   return (
     <EditorContainer>
-      <Editor
-        height={height ? height : "300px"}
-        defaultLanguage="noir"
-        defaultValue={defaultCode}
-        onChange={(value) => setCode(value)}
-      />
-      <ButtonContainer>
-        <InnerButtonContainer>
-          <StyledButton onClick={() => submit()} disabled={pending}>
-            Compile
-          </StyledButton>
-        </InnerButtonContainer>
-        {params && (
-          <InputsContainer>
-            <RenderInputs
-              params={params}
-              inputs={inputs}
-              handleInput={handleInput}
-            />
-            <StyledButton onClick={() => prove()} disabled={pending}>
-              Prove
+      <LoadGrammar>
+        <ToastContainer />
+        <Editor
+          height={height ? height : "300px"}
+          defaultLanguage="noir"
+          defaultValue={defaultCode}
+          onChange={(value) => setCode(value)}
+        />
+        <ButtonContainer>
+          <InnerButtonContainer>
+            <StyledButton onClick={() => submit()} disabled={pending}>
+              Compile
             </StyledButton>
-          </InputsContainer>
-        )}
-      </ButtonContainer>
+          </InnerButtonContainer>
+          {params && (
+            <InputsContainer>
+              <RenderInputs
+                params={params}
+                inputs={inputs}
+                handleInput={handleInput}
+              />
+              <StyledButton onClick={() => prove()} disabled={pending}>
+                Prove
+              </StyledButton>
+            </InputsContainer>
+          )}
+        </ButtonContainer>
+      </LoadGrammar>
     </EditorContainer>
   );
 }

@@ -1,4 +1,3 @@
-import { LoadGrammar } from "./syntax/loadGrammar";
+import 'react-toastify/dist/ReactToastify.css';
 import NoirEditor from "./components/NoirEditor";
-
-export { LoadGrammar, NoirEditor };
+export { NoirEditor };

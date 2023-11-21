@@ -380,7 +380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noir-lang/noirc_abi@npm:0.19.2, @noir-lang/noirc_abi@npm:^0.19.2":
+"@noir-lang/noirc_abi@npm:0.19.2":
   version: 0.19.2
   resolution: "@noir-lang/noirc_abi@npm:0.19.2"
   checksum: 24e07cf654305cc7db69e6b2ba5cbe723661cc0edddc06da6baabf51fa72806852008189ac4760c43e6e1521f038dae68de35789d5f8bfdcbe77a00a10bea249
@@ -432,20 +432,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-alias@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "@rollup/plugin-alias@npm:5.0.1"
-  dependencies:
-    slash: "npm:^4.0.0"
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: 5b3d095f0ab729925144a6df2b5431a8ee1dea46ab0e53e5415600ebc551bc17d7179f0171a6f252c2a16085d3f3f904295c3adb271a32ea203f7443d909173a
-  languageName: node
-  linkType: hard
-
 "@rollup/plugin-json@npm:^6.0.1":
   version: 6.0.1
   resolution: "@rollup/plugin-json@npm:6.0.1"
@@ -476,22 +462,6 @@ __metadata:
     tslib:
       optional: true
   checksum: ce49baf4cf97f3a33d0e60324a0f80ebe963fee002e791171bec2d05a1ae5e5be6de2bc4191790d88fbc78d4c2bac1be141fc47bd5f2dec7172514acd7652ffe
-  languageName: node
-  linkType: hard
-
-"@rollup/plugin-url@npm:^8.0.2":
-  version: 8.0.2
-  resolution: "@rollup/plugin-url@npm:8.0.2"
-  dependencies:
-    "@rollup/pluginutils": "npm:^5.0.1"
-    make-dir: "npm:^3.1.0"
-    mime: "npm:^3.0.0"
-  peerDependencies:
-    rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-  peerDependenciesMeta:
-    rollup:
-      optional: true
-  checksum: 8e89a2716da2c811888569de1a5a9df715491a8c1f7bc1ddd2b0ad74afcc5bf079b4e8b12b4663ed29e99f40fd88fa00c33f0dd3deb91de2457b37fcb72eb0b3
   languageName: node
   linkType: hard
 
@@ -617,18 +587,17 @@ __metadata:
     "@noir-lang/backend_barretenberg": "npm:^0.19.2"
     "@noir-lang/noir_js": "npm:^0.19.2"
     "@noir-lang/noir_wasm": "npm:^0.19.2"
-    "@noir-lang/noirc_abi": "npm:^0.19.2"
     "@noir-lang/source-resolver": "npm:^0.19.2"
     "@noir-lang/types": "npm:^0.19.2"
-    "@rollup/plugin-alias": "npm:^5.0.1"
     "@rollup/plugin-json": "npm:^6.0.1"
     "@rollup/plugin-typescript": "npm:^11.1.5"
-    "@rollup/plugin-url": "npm:^8.0.2"
     "@rollup/plugin-wasm": "npm:^6.2.2"
     "@types/react": "npm:18.2.38"
     "@typescript-eslint/eslint-plugin": "npm:^6.12.0"
     "@typescript-eslint/parser": "npm:^6.12.0"
     eslint: "npm:^8.54.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.4"
     monaco-editor: "npm:^0.44.0"
     monaco-editor-textmate: "npm:^4.0.0"
     monaco-textmate: "npm:^3.0.1"
@@ -638,7 +607,7 @@ __metadata:
     react-toastify: "npm:^9.1.3"
     rollup-plugin-copy: "npm:^3.5.0"
     styled-components: "npm:^6.1.1"
-    typescript: "npm:5.2.2"
+    typescript: "npm:^5.3.2"
   languageName: unknown
   linkType: soft
 
@@ -2197,15 +2166,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"make-dir@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "make-dir@npm:3.1.0"
-  dependencies:
-    semver: "npm:^6.0.0"
-  checksum: 56aaafefc49c2dfef02c5c95f9b196c4eb6988040cf2c712185c7fe5c99b4091591a7fc4d4eafaaefa70ff763a26f6ab8c3ff60b9e75ea19876f49b18667ecaa
-  languageName: node
-  linkType: hard
-
 "make-fetch-happen@npm:^13.0.0":
   version: 13.0.0
   resolution: "make-fetch-happen@npm:13.0.0"
@@ -2239,15 +2199,6 @@ __metadata:
     braces: "npm:^3.0.2"
     picomatch: "npm:^2.3.1"
   checksum: 3d6505b20f9fa804af5d8c596cb1c5e475b9b0cd05f652c5b56141cf941bd72adaeb7a436fda344235cef93a7f29b7472efc779fcdb83b478eab0867b95cdeff
-  languageName: node
-  linkType: hard
-
-"mime@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "mime@npm:3.0.0"
-  bin:
-    mime: cli.js
-  checksum: 402e792a8df1b2cc41cb77f0dcc46472b7944b7ec29cb5bbcd398624b6b97096728f1239766d3fdeb20551dd8d94738344c195a6ea10c4f906eb0356323b0531
   languageName: node
   linkType: hard
 
@@ -2821,15 +2772,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0":
-  version: 6.3.1
-  resolution: "semver@npm:6.3.1"
-  bin:
-    semver: bin/semver.js
-  checksum: e3d79b609071caa78bcb6ce2ad81c7966a46a7431d9d58b8800cfa9cb6a63699b3899a0e4bcce36167a284578212d9ae6942b6929ba4aa5015c079a67751d42d
-  languageName: node
-  linkType: hard
-
 "semver@npm:^7.3.5, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
@@ -2875,13 +2817,6 @@ __metadata:
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
   checksum: e18488c6a42bdfd4ac5be85b2ced3ccd0224773baae6ad42cfbb9ec74fc07f9fa8396bd35ee638084ead7a2a0818eb5e7151111544d4731ce843019dab4be47b
-  languageName: node
-  linkType: hard
-
-"slash@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "slash@npm:4.0.0"
-  checksum: b522ca75d80d107fd30d29df0549a7b2537c83c4c4ecd12cd7d4ea6c8aaca2ab17ada002e7a1d78a9d736a0261509f26ea5b489082ee443a3a810586ef8eff18
   languageName: node
   linkType: hard
 
@@ -3088,23 +3023,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.2.2":
-  version: 5.2.2
-  resolution: "typescript@npm:5.2.2"
+"typescript@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "typescript@npm:5.3.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 91ae3e6193d0ddb8656d4c418a033f0f75dec5e077ebbc2bd6d76439b93f35683936ee1bdc0e9cf94ec76863aa49f27159b5788219b50e1cd0cd6d110aa34b07
+  checksum: d7dbe1fbe19039e36a65468ea64b5d338c976550394ba576b7af9c68ed40c0bc5d12ecce390e4b94b287a09a71bd3229f19c2d5680611f35b7c53a3898791159
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>":
-  version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+"typescript@patch:typescript@npm%3A^5.3.2#optional!builtin<compat/typescript>":
+  version: 5.3.2
+  resolution: "typescript@patch:typescript@npm%3A5.3.2#optional!builtin<compat/typescript>::version=5.3.2&hash=e012d7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 062c1cee1990e6b9419ce8a55162b8dc917eb87f807e4de0327dbc1c2fa4e5f61bc0dd4e034d38ff541d1ed0479b53bcee8e4de3a4075c51a1724eb6216cb6f5
+  checksum: 73c8bad74e732d93211c9d77f28b03307e2f5fc6a0afc73f4b783261ab567686a16d6ae958bdaef383a00be1b0b8c8b6741dd6ca3d13af4963fa7e47456d49c7
   languageName: node
   linkType: hard
 

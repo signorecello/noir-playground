@@ -4,6 +4,12 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "build": "yarn workspaces foreach --all --parallel --topological-dev --verbose run build",
+    "build:from_npm": "bash ./scripts/use_npm.sh && yarn build",
+    "build:from_workspace": "bash ./scripts/use_workspace.sh && yarn build",
+    "dev": "yarn workspace example dev"
+  },
   "dependencies": {
     "react": "^18.2.0"
   },
