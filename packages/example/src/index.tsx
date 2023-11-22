@@ -4,6 +4,11 @@ import "@fontsource-variable/inter";
 import "./index.css";
 import { NoirEditor } from "@signorecello/noir_playground";
 
+function getQueryParam(param: string) {
+  const searchParams = new URLSearchParams(window.location.search);
+  return searchParams.get(param);
+}
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <div className="container">
@@ -16,7 +21,15 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         </a>
         &nbsp;to know more
       </p>
-      <NoirEditor height="300px" />
+      <NoirEditor
+        height="300px"
+        baseUrl={
+          process.env.NODE_ENV === "development"
+            ? window.location.href.slice(0, -1)
+            : "https://noir-playground.netlify.app"
+        }
+        initialCode={getQueryParam("share") || undefined}
+      />
     </div>
   </React.StrictMode>,
 );

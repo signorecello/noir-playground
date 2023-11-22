@@ -29,12 +29,11 @@ export const EditorContainer = styled.div`
   flex-direction: column;
 `;
 
-export const ButtonContainer = styled.div<EditorProps>`
+export const ActionsContainer = styled.div<EditorProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "100%"};
 `;
 
 export const InnerButtonContainer = styled.div`
@@ -45,7 +44,7 @@ export const InnerButtonContainer = styled.div`
   margin-top: 20px;
 `;
 
-export const InputsContainer = styled.div`
+export const ParamsContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,4 +53,8 @@ export const InputsContainer = styled.div`
   background-color: white;
   margin: 10px;
   padding: 0 2%;
+`;
+
+export const InputsContainer = styled.div`
+  width: 100%;
 `;

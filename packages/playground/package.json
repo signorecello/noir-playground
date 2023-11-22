@@ -29,6 +29,8 @@
     "@noir-lang/noir_wasm": "^0.19.2",
     "@noir-lang/source-resolver": "^0.19.2",
     "@noir-lang/types": "^0.19.2",
+    "fflate": "^0.8.1",
+    "js-base64": "^3.7.5",
     "monaco-editor": "^0.44.0",
     "monaco-editor-textmate": "^4.0.0",
     "monaco-textmate": "^3.0.1",
