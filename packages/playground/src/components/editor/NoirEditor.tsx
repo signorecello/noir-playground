@@ -108,7 +108,7 @@ function NoirEditor(props: NoirEditorProps) {
         <ButtonContainer {...props}>
           <InnerButtonContainer>
             <StyledButton onClick={() => submit()} disabled={pending}>
-              Compile
+              🔄 Compile
             </StyledButton>
           </InnerButtonContainer>
           {params && (
@@ -118,9 +118,13 @@ function NoirEditor(props: NoirEditorProps) {
                 inputs={inputs}
                 handleInput={handleInput}
               />
+          <InnerButtonContainer>
+
               <StyledButton onClick={() => prove()} disabled={pending}>
-                Prove
+                📜 Prove
               </StyledButton>
+          </InnerButtonContainer>
+
             </InputsContainer>
           )}
         </ButtonContainer>

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { InputsBoxTypes, ParamType } from "../../types";
-import { Label, InputSection } from "./inputs.styles";
+import { Label, InputSection, Input } from "./inputs.styles";
 
 export function RenderInputs({ params, inputs, handleInput }: InputsBoxTypes) {
   if (!params) return <></>;
@@ -20,7 +20,7 @@ export function RenderInputs({ params, inputs, handleInput }: InputsBoxTypes) {
         <InputSection $indent={!!param.children}>
           <Label $isParent={!!param.children}>{param.name}</Label>
           {param.name && (
-            <input
+            <Input
               name={param.name}
               type="text"
               onChange={handleInput}

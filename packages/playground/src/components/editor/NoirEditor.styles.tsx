@@ -2,10 +2,9 @@ import { EditorProps } from "@monaco-editor/react";
 import styled from "styled-components";
 
 export const StyledButton = styled.button<{ disabled?: boolean }>`
-  width: 100px;
   margin: 10px;
   border-radius: 8px;
-  border: 2px solid var(--green-600, #00694d);
+  border: 2px solid var(--green-400, #2fa483);
   background: var(--green-400, #2fa483);
   color: #fff;
   text-align: right;
@@ -15,7 +14,7 @@ export const StyledButton = styled.button<{ disabled?: boolean }>`
   line-height: 100%; /* 15px */
   display: flex;
   height: 40px;
-  padding: 12px 24px 12px 16px;
+  padding: 20px;
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
@@ -43,6 +42,7 @@ export const InnerButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 20px;
 `;
 
 export const InputsContainer = styled.div`
