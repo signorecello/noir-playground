@@ -19,11 +19,11 @@ import { LoadGrammar } from "../../hooks/loadGrammar";
 import { useParams } from "../../hooks/useParams";
 
 export interface NoirEditorProps extends EditorProps {
-  threads?: number
+  threads?: number;
 }
 
 function NoirEditor(props: NoirEditorProps) {
-  const [defaultCode, setDefaultCode] = useState<string | undefined>(undefined)
+  const [defaultCode, setDefaultCode] = useState<string | undefined>(undefined);
   const [code, setCode] = useState<string | undefined>();
   const [proof, setProof] = useState<ProofData | null>(null);
   const [pending, setPending] = useState<boolean>(false);
@@ -70,7 +70,11 @@ function NoirEditor(props: NoirEditorProps) {
   const prove = async () => {
     const inputMap = prepareInputs(params!, inputs);
     const proofData = await toast.promise(
-      generateProof({ circuit: compiledCode!, input: inputMap as InputMap, threads: props.threads ?? navigator.hardwareConcurrency }),
+      generateProof({
+        circuit: compiledCode!,
+        input: inputMap as InputMap,
+        threads: props.threads ?? navigator.hardwareConcurrency,
+      }),
       {
         pending: "Calculating proof...",
         success: "Proof calculated!",
@@ -87,14 +91,17 @@ function NoirEditor(props: NoirEditorProps) {
 
   useEffect(() => {
     if (!defaultCode) {
-      (async () => fetch(new URL("./main.nr", import.meta.url)).then(res => res.text()).then(code => {
-        setDefaultCode(code)
-        setCode(code)
-      }))()
+      (async () =>
+        fetch(new URL("./main.nr", import.meta.url))
+          .then((res) => res.text())
+          .then((code) => {
+            setDefaultCode(code);
+            setCode(code);
+          }))();
     }
-  }, [defaultCode])
+  }, [defaultCode]);
 
-  if (!defaultCode) return <div>Loading...</div>
+  if (!defaultCode) return <div>Loading...</div>;
   return (
     <EditorContainer>
       <LoadGrammar>
@@ -118,13 +125,11 @@ function NoirEditor(props: NoirEditorProps) {
                 inputs={inputs}
                 handleInput={handleInput}
               />
-          <InnerButtonContainer>
-
-              <StyledButton onClick={() => prove()} disabled={pending}>
-                📜 Prove
-              </StyledButton>
-          </InnerButtonContainer>
-
+              <InnerButtonContainer>
+                <StyledButton onClick={() => prove()} disabled={pending}>
+                  📜 Prove
+                </StyledButton>
+              </InnerButtonContainer>
             </InputsContainer>
           )}
         </ButtonContainer>

@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const InputSection = styled.div<{ $indent: boolean }>`
@@ -15,11 +14,11 @@ export const Label = styled.label<{ $isParent?: boolean }>`
 `;
 
 export const Input = styled.input<{ $color?: string }>`
-    background: #fff;
-    border: 1px solid #dadedf;
-    border-radius: 4px;
-    color: ${props => props.$color || "#514167"};
-    font-family: inherit;
-    padding: 10px;
-    text-align: left;
-`
+  background: #fff;
+  border: 1px solid #dadedf;
+  border-radius: 4px;
+  color: ${(props) => props.$color || "#514167"};
+  font-family: inherit;
+  padding: 10px;
+  text-align: left;
+`;
