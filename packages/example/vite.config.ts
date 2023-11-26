@@ -6,9 +6,14 @@ const wasmContentTypePlugin = {
   name: "wasm-content-type-plugin",
   configureServer(server) {
     server.middlewares.use(async (req, res, next) => {
+      console.log(req.url);
       if (req.url.endsWith(".wasm")) {
         res.setHeader("Content-Type", "application/wasm");
       }
+
+      res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+      res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+      res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
       next();
     });
   },

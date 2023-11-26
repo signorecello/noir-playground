@@ -1,13 +1,11 @@
-import { EditorProps } from "@monaco-editor/react";
 import styled from "styled-components";
 
-export const ActionsContainer = styled.div<EditorProps>`
+export const ActionsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
   background-color: white;
-  width: ${(props) => props.width || "100%"};
   flex-wrap: wrap;
 `;
 

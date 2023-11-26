@@ -1,4 +1,4 @@
-import { EditorProps } from "@monaco-editor/react";
+import { EditorProps } from "@mona
 import styled from "styled-components";
 
 export const ResultsContainer = styled.div<EditorProps>`

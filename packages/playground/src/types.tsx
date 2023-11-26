@@ -1,5 +1,4 @@
 import { InputMap } from "@noir-lang/noirc_abi";
-import { EditorProps } from "@monaco-editor/react";
 
 export type ParamType = {
   name: string;
@@ -19,7 +18,7 @@ export type InputsBoxTypes = {
   }) => void;
 };
 
-export interface NoirEditorProps extends EditorProps {
+export interface NoirEditorProps {
   threads?: number;
   baseUrl?: string;
   initialCode?: string;
