@@ -9,19 +9,19 @@ function getQueryParam(param: string) {
 }
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <div className="container">
-    <div className="title-container">
-      <h1>Noir Playground</h1>
-      <p>This playground works entirely client-side. Enjoy!</p>
-    </div>
-    <NoirEditor
-      height="300px"
-      baseUrl={
-        process.env.NODE_ENV === "development"
-          ? window.location.host
-          : "https://noir-playground.netlify.app"
-      }
-      initialCode={getQueryParam("share") || undefined}
-    />
-  </div>,
+  // <div className="container">
+  //   <div className="title-container">
+  //     <h1>Noir Playground</h1>
+  //     <p>This playground works entirely client-side. Enjoy!</p>
+  //   </div>
+  <NoirEditor
+    height="300px"
+    baseUrl={
+      process.env.NODE_ENV === "development"
+        ? window.location.host
+        : "https://noir-playground.netlify.app"
+    }
+    initialCode={getQueryParam("share") || undefined}
+  />,
+  // </div>,
 );

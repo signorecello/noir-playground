@@ -1,15 +1,19 @@
 import styled from "styled-components";
 
-export const EditorContainer = styled.div`
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  box-sizing: border-box;
-  font-size: 14px;
-  font-family: "Fira Code Variable", sans-serif;
-`;
+// export const EditorContainer = styled.div`
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   box-sizing: border-box;
+//   font-size: 14px;
+//   font-family: "Fira Code Variable", sans-serif;
+// `;
+
+// export const EditorContainer = styled.div`
+//   height: 100%;
+// `;
 
 export const TitleBox = styled.div`
   display: flex;

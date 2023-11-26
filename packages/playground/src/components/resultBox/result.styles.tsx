@@ -1,12 +1,10 @@
-import { EditorProps } from "@mona
 import styled from "styled-components";
 
-export const ResultsContainer = styled.div<EditorProps>`
+export const ResultsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
-  width: ${(props) => props.width || "100%"};
   align-items: flex-start;
   flex-wrap: wrap;
 `;
