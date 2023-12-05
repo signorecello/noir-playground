@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.2](https://github.com/signorecello/noir-playground/compare/noir_playground-v0.5.1...noir_playground-v0.5.2) (2023-12-05)
+
+
+### Bug Fixes
+
+* rp ([7609f39](https://github.com/signorecello/noir-playground/commit/7609f39ef381ec7dbfa89e3696dff4a1635f77ee))
+* rp ([dc3d41e](https://github.com/signorecello/noir-playground/commit/dc3d41ed38e02255a903a3c31acca25d6753609e))
+* some more styling fixes ([9a6f7b1](https://github.com/signorecello/noir-playground/commit/9a6f7b17c8684abaee9e55a5514f1235c53885bc))
+* some more styling fixes ([034e9cc](https://github.com/signorecello/noir-playground/commit/034e9ccc3fc074f78eb43e647636d491f3803f28))
+
 ## [0.5.1](https://github.com/signorecello/noir-playground/compare/noir_playground-v0.5.0...noir_playground-v0.5.1) (2023-12-05)
 
 
